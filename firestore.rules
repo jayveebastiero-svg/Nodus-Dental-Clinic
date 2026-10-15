@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Put your staff emails here (lowercase). Only these people can use the CRM data.
+    function isStaff() {
+      return request.auth != null
+        && request.auth.token.email in [
+          'owner@example.com',
+          'staff1@example.com'
+        ];
+    }
+
+    match /{document=**} {
+      allow read, write: if isStaff();
+    }
+  }
+}

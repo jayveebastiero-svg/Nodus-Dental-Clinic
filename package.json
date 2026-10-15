@@ -1,0 +1,10 @@
+{
+  "name": "ngiti-meta",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ngiti Clinic CRM: Messenger webhook and sender",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "firebase-admin": "^12.7.0"
+  }
+}
